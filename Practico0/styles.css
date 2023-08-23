@@ -1,0 +1,112 @@
+
+
+
+.tituloprincipal{
+    text-align: center;/*centro el titulo*/
+    text-transform: uppercase;/*paso a mayuscula*/ 
+    font-size: 45px; /*tamaño del titulo*/
+    color: rgb(227, 205, 205);/*color del titulo*/
+
+}
+
+body{
+    background-image: url("fondo/quantum-gradient.png");/*pongo fondo*/
+    background-size: cover; /*le pido que cubra toda la pantalla*/
+    background-repeat: no-repeat; /*que no repita el fondo*/
+    font-family:Verdana, Geneva, Tahoma, sans-serif;/*fuente de la pagina*/
+}
+#subtitulos{
+    text-align: center;
+    color: rgb(200, 190, 190);/*color del subtitulo*/
+    font-size:40px;/*tamaño de la letra del subtitulo*/
+    background-color:rgba(200, 190, 190, 0.363);/*pinto el fondo de los subtitulos*/
+    border-style: solid;/*pongo para que se vea el borde*/
+    border-color: rgba(183, 36, 202, 0.492);/*colore del borde*/
+
+}
+
+#textos{
+    text-align:center;/*textos al centro*/
+    color: rgb(200, 190, 190);/*color del subtitulo*/
+    font-size:20px;/*tamaño de la letra del texto*/
+}
+
+.fotosyvideo{
+    display: flex; /*ajusta a los marcos*/
+    justify-content:center;/*justifica al centro de la pagina*/
+
+}
+#foto1{
+    display: flex;/*ajusta la imagen al borde*/
+    border: 10px; /*para dar grosor al borde*/
+    border-style:solid; /*para dar solidez alborde*/
+    border-color: rgb(231, 146, 215, 0.329);/*colore del borde*/
+    border-style: double;/*da borde doble*/
+}
+#foto2{
+    border: 10px; /*para dar grosor al borde*/
+    display: flex; /*ajusta la imagen al borde*/
+    border-style:solid; /*para dar solidez alborde*/
+    border-color: rgba(231, 146, 215, 0.329);/*colore del borde*/
+    border-style: double;/*da borde doble*/
+}
+#foto3{
+    border: 10px; /*para dar grosor al borde*/
+    border-style:solid; /*para dar solidez alborde*/
+    display: flex; /*ajusta la imagen al borde*/
+    border-color: rgb(231, 146, 215, 0.329);/*colore del borde*/
+    border-style: double;/*da borde doble*/
+}
+
+.fotosyvideo :hover{
+    background-color: rgba(154, 64, 142, 0.252);/*hace un efecto de resaltado al pasar el cursor sobre fotos y videos*/
+}
+
+#video{
+    border: 5px;/*para dar grosor al borde*/
+    display: flex; /*ajusta el video al borde*/
+    border-style:solid;/*para dar solidez alborde*/
+    border-color:rgba(231, 146, 215, 0.329);/*colore del borde*/
+    border-style:solid;/*da borde doble*/
+}
+.trabajo{
+    text-align: center; /*centra el texto*/
+    font-size: 20px;/*tamaño de la letra*/
+    color:rgb(200, 190, 190);/*color de la letra*/
+}
+
+.conteiner{
+    justify-content:center;/*centrar el cuadro*/
+}
+table{
+    display:contents;
+}
+thead{
+    background:rgba(132, 49, 121, 0.492);/*le da color a la primera fila*/
+}
+th{
+    padding: 20px 15px; /*le da el alto a la primera fila de cada columna*/
+    text-transform: uppercase; /*pasa a mayusculas la primera fila*/
+    border-style:ridge; /*le da como una sobra al recuadro*/
+    border-color: rgb(231, 146, 215, 0.329);/*le da el color al contorno*/
+}
+td{
+    padding: 20px; /*le da el alto a las filas a partir de la segunda*/
+    border-style:ridge; /*le da como una sombra al recuadro*/
+    border-color: rgb(231, 146, 215, 0.329);/*le da el color al contorno*/
+}
+tbody tr:hover{
+    background:rgba(154, 64, 142, 0.252);/*permite resaltar por donde pasa el cursor*/
+}
+tbody tr{
+    cursor:pointer;/*cambia el icono del curso cuando pasa por la fila*/
+}
+.intereses{
+    display: flex;/*para poner en columnas*/
+    justify-content: center;/*centrar el cuadro de intereses*/
+}
+.loquesiyno{
+    background-color: rgba(140, 96, 134, 0.066);/*para el fonde de color*/
+    padding: 5px;/*tamaño de cada cuadro pintado*/
+    margin: 0 10px;/*para separa cada margen de columnas*/
+}

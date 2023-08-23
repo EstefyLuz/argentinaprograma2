@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calucladora</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="conteiner">
+        <form id="Calculadora">
+            <h1>Calculadora TP1</h1>
+            <label>Numero 1: </label>
+            <br>
+                <input id="operando1" type="number" placeholder="Ingrese un número" >
+                <br>
+                <br>
+
+                <select id="operaciones">
+                    <option disabled selected>selecciona la Operacion</option>
+                    <option value="+">Suma</option>
+                    <option value="-">Resta</option>
+                    <option value="*">Multiplicación</option>
+                    <option value="/">División</option>
+                </select>
+                <br>
+                <br>
+
+            <label>Numero 2: </label>
+            <br>
+            <input id="operando2" type="number" placeholder="Ingrese un número" >
+            <br>
+            <br>
+
+            <button type="button" onclick="Calcular()">Calcular el resultado</button>
+            <p id="resultado">El resultado es: </p>
+
+            <button type="button" onclick="limpiar()">Limpiar Calculadora</button>
+
+        </form>
+    </div>
+         <!--Importo JavaScript-->
+         <script src="./main.js"></script>
+</body>
+</html>

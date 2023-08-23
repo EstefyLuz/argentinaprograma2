@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es"><!--pongo en espanol-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del Alumno</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> <!--crear cuerpo de pagina-->
+
+    <herder class="tituloprincipal">
+        <h1>presentacion</h1>  
+    </herder> <!--crep el titulo que se va a ver arriba en la pag, la class es para dar diseno en css-->
+    
+    <main><!--Aca viene todo lo que esta en la pag abajo del tt-->
+        <div class="intro"><!--defino clase intro para css-->
+            <div id="textos"><!--defino id de txt en esta clase y en otras para modificar todas juntas en css-->
+                <p>Soy <b>Estefanía Tarasiuk</b> y estoy armando una presentación para el primer práctico del curso de Argentina Programa que se llama <b><i>Páginas web con componentes dinámicos</b></i>.</p>
+                <h2 id="subtitulos"><strong>Sobre mi:</strong></h2><!--pongo el subtitulo-->
+                <p id="textos">Tengo 34 años y cumplo los 30 de mayo.</p><!--defino id de txt en esta clase y en otras para modificar todas juntas en css-->
+                <p id="textos">Vivo en Banfiel, Buenos Aires. Con mi pareja y mi gata, que se llama Enki. Unas foto a continuacion:</p><!--defino id de txt en esta clase y en otras para modificar todas juntas en css-->
+        </div><!--cierro class intro-->
+
+        <div class="fotosyvideo"><!--defino class fotos y videos-->
+            <div id="foto1"><!--le pongo id a todas las fotos porque las quiero-->
+                <img src="img/enki.jpeg"
+                alt="Se muestra la foto 1 de Enki"
+                width="300"> <!--agrego la imagen creando previamente la carpeta con la misma y accediendo a la ruta. Aclaracion: no les puse height a todas porque me quedaban feas-->
+            </div>
+            <div id="foto2">
+                <img src="img/enki2.jpeg"
+                alt="Se muestra la foto 2 de Enki"
+                width="300">
+            </div>
+            <div id="foto3">
+                <img src="img/enki3.jpeg"
+                alt="Se muestra la foto 3 de Enki"
+                width="300" height="400">
+            </div>
+        </div>
+            
+        <div>
+            <p id="textos">Dejo un video por aca:</p><!--asigno id texto nuevamente para dar estilo en css-->
+        </div>
+
+        <div class="fotosyvideo"><!--le asigno class fotos y videos(no los puse juntos porque le tuve que agregar un txt en el medio, no se como se hace)-->
+            <video id="video" src="video/video.mp4" controls type="video/mp4"
+            width="450" height="400"></video> <!--se carga igual que la imagen el video pero con otra etiqueta y hay que agregar controls para usar controles en la pagina. Despues el tamanio fui jugando un poco-->
+        </div>
+
+
+        <div class="trabajo"><!--class trabajo lo separe porque le iba a poner un cuadro, lo hice asi por comodidad y para trabajarlo por etapas sin perderme pero creo que tranquilamente podia poner ese class a partir del cuadro-->
+            <h2 id="subtitulos"><b>Donde trabajo:</b></h2>
+            <div>
+                <p>Trabajo en la empresa CLAVES ICSA, que es una empresa que se dedica a hacer investigacion de mercados.</p>
+                <p>Dejo por <a href="https://www.claves.com.ar/">acá</a> el link a la página de Claves.</p>
+                <p>Algunos de los servicios que brinda la empresa son:</p>
+            <div><!--este div lo hice por las dudas pero no lo use. Le puse referencia a un link de pagina-->
+
+            <div class="conteiner"><!--Aca arme la clase para llamar a la tabla en general a darle estilo-->
+                <table> <!--va a indicar todo lo que esta dentro de la tabla-->
+                    <thead><!--define la parte de arriba del cuadro, la primera fila-->
+                        <tr><!--entiendo que debe referir a cada celda de la primer fila-->
+                            <th><b>Estudios de Mercados</b></th><!--aca puse cada contenido que lo dejo a modo de tt en el cuadro en la primera fila. Cada th es una celda-->
+                            <th><b>Estudios AdHoc</b></th>
+                            <th ><b>Monitor Sectorial</b> </th>
+                            <th><b>Bases de datos</b></th>          
+                        </tr>
+                    </thead>
+
+                    <tbody><!--entiendo que refiere al cuerpo de la tabla, en este caso a partir de la fila 2-->
+                        <tr><!--indico que voy a escribir lo que contiene cada celda-->
+                            <td>Suelen tener más o menos 40 páginas y dan un diagnóstico del negocio, nivel de actividad, precios, Comex, etc.</td><!--especifico el contenido de cada celda-->
+                            <td>Son muchos más amplios y se hacen a medida de lo que necesite, no se enfocan en el mercado en general sino en la necesidad de la empresa que lo necesite.</td>
+                            <td>Es una plataforma que tiene como objetivo monitorear lo distintos mercados a traves de distintos segmentados que tiene para hacer el dimensionamiento que se necesite.</td>
+                            <td>Que a las empresas les suele servir para mejorar la prospección</td>
+                        </tr>
+                    </tbody><!--como en los anteriores que no anote, cierro las eriquetas cuando dejo de trabajar sobre esa parte-->
+                </table><!--idem a tbody>-->
+            </div><!--cierro etiqueta de cuadro-->
+
+        <div>
+            <h4>Que es lo que yo hago:</h4><!--subtitulo-->
+            <p>Hago un poco de todo, coordino agendas, ayudo en la coordinación de los partner, superviso el enriquecimiento de bases, trabajo con los pedidos a proveedores y aveces me pongo a vender.</p><!--parrafo-->
+        </div>
+
+            <div>
+                <h2 id="subtitulos">De programacion</h2><!--le doy id para el estilo que puse en css de los subtt-->
+                <p>El curso de programacion lo emprecé a hacer de casualidad, mi cuñada se anotó el año pasado al <b>Argentina Programa</b> y me dio curiosidad así que me anoté yo también. Cuesta porque no tenía idea de absolutamente nada. Pero me parece divertido dentro de todo, aveces no ando con tiempo pero cuando tengo me pongo con gusto a ver de que se trata. Capaz siga estudiando cuando termine este; por lo menos ya voy a tener una base. </p>
+            </div>
+
+        <div class="intereses"><!--hago la class intereses porque voy a trabajarlo tipo cuadro tambien-->
+            <div class="loquesiyno"><!--la clase esta y la de abajo las trabaje por separado para no tener problemas con el tema del recuadro-->
+                <h2>Cosas que me interesan</h2>
+                    <li>Leer</li><!--listo lo que me ineteresa en cada <li>-->
+                    <li>Musica</li>
+                    <li>Mi familia</li>
+                    <li>Aprender</li>
+            </div>
+
+            <div class="loquesiyno"><!--lo mismo que en el anterior div-->
+                <h2>Cosas que ya no me interesan</h2>
+                    <li>Discutir</li>
+                    <li>La política</li>
+                    <li>Lo que digan en la televisión</li>
+            </div>
+        </div><br><hr><!--cierro el div de intereses y pongo el hr para la raya de abajo-->
+        <br>
+        <div>
+            <footer>
+                <address><!--puse el mail en el pie de pagina-->
+                    estefy.luz.tarasiuk@gmail.com
+                </address>
+            </footer>
+        </div>
+    </main>
+</body> <!--cierra crear cuerpo de pagina-->
+</html>
