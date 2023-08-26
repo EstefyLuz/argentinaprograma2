@@ -17,26 +17,30 @@
         <div class="Item item2">Selecciona la opcion a jugar</div>
 
         <div class="seleccionarJugada">
-             <div class="Item item3">
-                 <button onclick="mostrarEleccion('Piedra');"><img src="imag/piedra.jpg" width="51"></button>
-             </div>
-             <div class="Item item4">
-                  <button onclick="mostrarEleccion('Papel');"><img src="imag/papel.jpg" width="49"></button>
-              </div>
-             <div class="Item item5">
-                 <button onclick="mostrarEleccion('Tijeras');"><img src="imag/tijeras.jpg" width="49"></button>
-             </div>
-        </div>     
+            <div class="Item item3">
+                <button data-eleccion="Piedra"><img src="imag/piedra.jpg" width="51"></button>
+            </div>
+            <div class="Item item4">
+                <button data-eleccion="Papel"><img src="imag/papel.jpg" width="49"></button>
+            </div>
+            <div class="Item item5">
+                <button data-eleccion="Tijeras"><img src="imag/tijeras.jpg" width="49"></button>
+            </div>
+        </div>
 
         <div class="Resultados">
             <div id="Ronda">
                 <p>Elecciones:</p>
-            <p id="usElije"></p> <!-- Párrafo para mostrar eleccion us-->
-            <p id="pcElije"></p> <!-- Párrafo para mostrar eleccion pc-->
+            <p id="usElije">Usuario:</p> <!-- Párrafo para mostrar eleccion us-->
+            <p id="pcElije">PC:</p> <!-- Párrafo para mostrar eleccion pc-->
             <div class="Item item6" id="ronda">Ganador de la Ronda</div>
-            <p id="ganaRonda"></p> <!-- Párrafo para mostrar ganador de la ronda-->
-            <div class="Item item7" id="resultado">Resultado</div>
-            <div class="Item item8">Reiniciar</div>
+            <p id="ganaRonda"> - </p> <!-- Párrafo para mostrar ganador de la ronda-->
+            <div class="Item item7" id="Marcador">Marcador</div>
+            <p id="MarcadorUs">Usuario: 0</p>
+            <p id="MarcadorPc">PC: 0</p>
+            
+            <p id="ganadorFinal"></p>
+            <div id="Reiniciar" class="Item item8"><button type="button" onclick="reiniciarJuego()">Reiniciar</button></div>
         </div>
     </div>
     <script src="./main.js"></script>

@@ -1,35 +1,61 @@
 const PIEDRA = "Piedra";
 const PAPEL = "Papel";
 const TIJERAS = "Tijeras";
-const GANA_COMPUTADORA = "Gana la Ronda la Computadora";
-const GANA_USUARIO = "Gana la ronda el Usuario";
+const GANA_COMPUTADORA = "Gana la Computadora";
+const GANA_USUARIO = "Gana el Usuario";
 const EMPATE = "Hay un empate!";
 const ERROR = "Debes ingresar tu nombre";
 let listaEleccion = [PIEDRA, PAPEL, TIJERAS];
 let nombreInput;
 let mostrarNombre = document.getElementById("nombreMostrado");
+let nombreIngresado = false;
+let resultados = []; // Variable para almacenar los resultados de las rondas
+// Las siguientes constantes las pase acá para no tener que volver a redeclararlas en la función Reiniciar
+const eleccionUsuario = document.getElementById("usElije"); 
+const eleccionCompu = document.getElementById("pcElije");    
+
+const marcadorRondaUsuario = document.getElementById("MarcadorUs");
+const marcadorRondaPc = document.getElementById("MarcadorPc");
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const buttonNombre = document.getElementById("buttonNombre");
 
     buttonNombre.addEventListener("click", () => {
-        nombreInput = document.getElementById("nombre").value.trim().toUpperCase(); // saco espacios de principio y fin de input y paso a mayuscula.
-        validarNombre(nombreInput); // valido que haya un nombre de jugador
-        mostrarNombre.textContent = `Jugadores: ${nombreInput} - PC`; // muestro los jugadores
-    });
-});
+        nombreInput = document.getElementById("nombre").value.trim().toUpperCase();
+        if (validarNombre(nombreInput)) {
+            mostrarNombre.textContent = `Jugadores: ${nombreInput} - PC`;
+            nombreIngresado = true;
+            habilitarEleccion();
+            marcadorRondaUsuario.textContent = `${nombreInput}:`;
+            eleccionUsuario.textContent = `${nombreInput}:`;
+        } 
+    }); 
+    
+}); 
 
-// funcion para validar input
+
 function validarNombre(nombreInput) {
-    const soloLetras = /^[A-Za-z]+$/;
+    const soloLetras = /^[A-Za-z\s]+$/;
     if (!soloLetras.test(nombreInput)) {
         alert(ERROR);
+        return false;
+    } else {
+        return true;
     }
 }
 
-// funcion para iniciar el juego
-function iniciarJuego(){
-    
+function habilitarEleccion() {
+    const clickearElecciones = document.querySelectorAll(".seleccionarJugada button");
+    clickearElecciones.forEach(button => {
+        button.removeAttribute("disabled");
+        button.addEventListener("click", function() {
+            if (nombreIngresado) {
+                const eleccion = this.getAttribute("data-eleccion");
+                mostrarEleccion(eleccion);
+            }
+        });
+    });
 }
 
 function obtenerJugadaComputadora() {
@@ -38,16 +64,16 @@ function obtenerJugadaComputadora() {
 }
 
 function mostrarEleccion(usEleccion) {
-    const eleccionUsuario = document.getElementById("usElije"); 
-    eleccionUsuario.textContent = `Elegiste: ${usEleccion}`;
-
+    eleccionUsuario.textContent = `${nombreInput}:` + `${usEleccion}`;
     const pcEleccion = obtenerJugadaComputadora();
-    const eleccionCompu = document.getElementById("pcElije");
     eleccionCompu.textContent = `La PC elige: ${pcEleccion}`;
 
     const resultado = resultadoRonda(pcEleccion, usEleccion);
+    resultados.push(resultado); // Agregar resultado a la lista de resultados
     const ganaRonda = document.getElementById("ganaRonda");
-    ganaRonda.textContent = resultado;
+    ganaRonda.textContent = "Ronda: " + resultado;
+
+    actualizarMarcador();
 }
 
 function resultadoRonda(compu, usuario) {
@@ -58,65 +84,45 @@ function resultadoRonda(compu, usuario) {
     } else if ((usuario === PIEDRA && compu === PIEDRA) || (usuario === PAPEL && compu === PAPEL) || (usuario === TIJERAS && compu === TIJERAS)) {
         return EMPATE;
     }
+    
 }
 
+function actualizarMarcador() {
 
 
-function resultadoRonda(compu,usuario){
-    if ((compu === PIEDRA && usuario === TIJERAS) || (compu === PAPEL && usuario === PIEDRA) || (compu === TIJERAS && usuario === PAPEL)){
-        return GANA_COMPUTADORA;
-    } else if ((usuario === PIEDRA && compu === TIJERAS) || (usuario === PAPEL && compu === PIEDRA) || (usuario === TIJERAS && compu === PAPEL)){
-        return GANA_USUARIO;
-    } else if ((usuario === PIEDRA && compu === PIEDRA) || (usuario === PAPEL && compu === PAPEL) || (usuario === TIJERAS && compu === TIJERAS)){
-        return EMPATE;
-    } 
+    let sumaRondaUs = resultados.filter(resultado => resultado === GANA_USUARIO).length;
+    let sumaRondaPc = resultados.filter(resultado => resultado === GANA_COMPUTADORA).length;
 
+    marcadorRondaUsuario.textContent = `${nombreInput}: ${sumaRondaUs}`;
+    marcadorRondaPc.textContent = `PC: ${sumaRondaPc}`;
+
+    ganadorFinal(sumaRondaUs, sumaRondaPc);
 }
 
-
-/*
-function obtenerJugadaUsuario(){
-    let eleccionUsuario = document.getElementsByClassName("seleccionarJugada");
-    let elijePiedra = document.getElementById("piedra");
-    let elijePapel = document.getElementById("papel");
-    let elijeTijeras = document.getElementById("tijeras");
-
-    elijePiedra.addEventListener("click", ()=>{
-        eleccionUsuario = PIEDRA;
-        document.getElementById("usElije").innerHTML = `${nombre} elije ${PIEDRA}`;
-
-    })
-
-}
-
-    if (eleccionUsuario.toLowerCase() != PIEDRA && eleccionUsuario.toLowerCase() != PAPEL && eleccionUsuario.toLowerCase() != TIJERAS){
-        console.log(ERROR);
-        return obtenerJugadaUsuario();
-    } else {
-        return eleccionUsuario.toLowerCase();
+function ganadorFinal(sumaRondaUs, sumaRondaPc){
+    if (sumaRondaUs === 3){
+        alert(GANA_USUARIO);
+    } else if (sumaRondaPc === 3){
+        alert(GANA_COMPUTADORA);
+    } else if (resultados.length === 5){
+        if (sumaRondaUs > sumaRondaPc){
+            alert(GANA_USUARIO);
+        } else if (sumaRondaUs < sumaRondaPc){
+            alert(GANA_COMPUTADORA);
+        } else if (sumaRondaUs === sumaRondaPc){
+            alert(EMPATE);
+        }
     }
-
-
-function determinarGanador(compu,usuario){
-    if ((compu === PIEDRA && usuario === TIJERAS) || (compu === PAPEL && usuario === PIEDRA) || (compu === TIJERAS && usuario === PAPEL)){
-        return GANA_COMPUTADORA;
-    } else if ((usuario === PIEDRA && compu === TIJERAS) || (usuario === PAPEL && compu === PIEDRA) || (usuario === TIJERAS && compu === PAPEL)){
-        return GANA_USUARIO;
-    } else if ((usuario === PIEDRA && compu === PIEDRA) || (usuario === PAPEL && compu === PAPEL) || (usuario === TIJERAS && compu === TIJERAS)){
-        return EMPATE;
-    } 
 }
 
-let resutadoComputadora = obtenerJugadaComputadora();
-let resultadoJugador = obtenerJugadaUsuario();
-
-function resultadoDelJuego(){
-    let resultadoFinal = determinarGanador(resutadoComputadora,resultadoJugador);
-    return resultadoFinal;
+function reiniciarJuego(){
+    nombreInput = ""; //ok
+    nombreIngresado = false;
+    resultados = [];
+    mostrarNombre.textContent = "";
+    eleccionUsuario.textContent = "Usuario:";
+    eleccionCompu.textContent = "PC:";
+    ganaRonda.textContent ="-";
+    marcadorRondaUsuario.textContent = "Usuario: 0";
+    marcadorRondaPc.textContent = "PC: 0";
 }
-
-console.log("La computadora eligio:", resutadoComputadora);
-console.log("El usuario eligio:", resultadoJugador);
-console.log("El resultado fue:", resultadoDelJuego());
-
-*/
