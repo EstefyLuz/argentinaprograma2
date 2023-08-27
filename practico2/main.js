@@ -63,7 +63,7 @@ function obtenerJugadaComputadora() {
 }
 
 function mostrarEleccion(usEleccion) {
-    eleccionUsuario.textContent = `${nombreInput}:` + `${usEleccion}`;
+    eleccionUsuario.textContent = `${nombreInput} elige: ` + `${usEleccion}`;
     const pcEleccion = obtenerJugadaComputadora();
     eleccionCompu.textContent = `La PC elige: ${pcEleccion}`;
 
