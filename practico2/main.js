@@ -30,14 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
             marcadorRondaUsuario.textContent = `${nombreInput}:`;
             eleccionUsuario.textContent = `${nombreInput}:`;
         } 
-    }); 
+        }); 
     
 }); 
 
 
 function validarNombre(nombreInput) {
-    const soloLetras = /^[A-Za-z\s]+$/;
-    if (!soloLetras.test(nombreInput)) {
+    if (nombreInput === "") {
         alert(ERROR);
         return false;
     } else {
@@ -46,7 +45,7 @@ function validarNombre(nombreInput) {
 }
 
 function habilitarEleccion() {
-    const clickearElecciones = document.querySelectorAll(".seleccionarJugada button");
+    const clickearElecciones = document.querySelectorAll("#seleccionarJugada button");
     clickearElecciones.forEach(button => {
         button.removeAttribute("disabled");
         button.addEventListener("click", function() {
@@ -116,6 +115,8 @@ function ganadorFinal(sumaRondaUs, sumaRondaPc){
 }
 
 function reiniciarJuego(){
+    const inputNombre = document.getElementById("nombre");
+    inputNombre.value = "";
     nombreInput = ""; //ok
     nombreIngresado = false;
     resultados = [];
