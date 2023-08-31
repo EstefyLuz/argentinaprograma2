@@ -82,11 +82,14 @@ function mostrarEleccion(usEleccion) {
 
 // reglas del juego, quien gana a quien.
 function resultadoRonda(compu, usuario) {
-    if ((compu === PIEDRA && usuario === TIJERAS) || (compu === PAPEL && usuario === PIEDRA) || (compu === TIJERAS && usuario === PAPEL)) {
+    if ((compu === PIEDRA && usuario === TIJERAS) || (compu === PAPEL && usuario === PIEDRA) 
+    || (compu === TIJERAS && usuario === PAPEL)) {
         return GANA_COMPUTADORA;
-    } else if ((usuario === PIEDRA && compu === TIJERAS) || (usuario === PAPEL && compu === PIEDRA) || (usuario === TIJERAS && compu === PAPEL)) {
+    } else if ((usuario === PIEDRA && compu === TIJERAS) || (usuario === PAPEL && compu === PIEDRA) 
+    || (usuario === TIJERAS && compu === PAPEL)) {
         return GANA_USUARIO;
-    } else if ((usuario === PIEDRA && compu === PIEDRA) || (usuario === PAPEL && compu === PAPEL) || (usuario === TIJERAS && compu === TIJERAS)) {
+    } else if ((usuario === PIEDRA && compu === PIEDRA) || (usuario === PAPEL && compu === PAPEL) 
+    || (usuario === TIJERAS && compu === TIJERAS)) {
         return EMPATE;
     }
 }

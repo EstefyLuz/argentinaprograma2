@@ -1,7 +1,7 @@
 body {
     background-image: radial-gradient(rgba(149, 247, 172, 0.517),
-            rgba(160, 241, 125, 0.539), rgba(237, 150, 121, 0.544)),
-        url("imag/pngegg.png");
+    rgba(160, 241, 125, 0.539), rgba(237, 150, 121, 0.544)),
+    url("imag/pngegg.png");
     align-items: flex-start;
     display: grid;
 
@@ -38,7 +38,6 @@ h1 {
     background-color: rgba(248, 55, 55, 0.765);
 }
 
-
 .conteiner1,
 .nombreMostrado,
 .reiniciar {
@@ -74,14 +73,12 @@ h1 {
 #buttonNombre:hover,
 #Reiniciar:hover {
     background-color: rgb(234, 21, 21);
-
 }
 
 .conteiner2 {
     grid-column: 1/2;
     padding: 10px;
     background-color: rgba(250, 235, 215, 0.688);
-
 }
 
 .conteiner3 {
@@ -96,7 +93,6 @@ h1 {
     padding: 20px;
     display: flex;
     justify-content: center;
-
 }
 
 h2,
@@ -123,7 +119,6 @@ h4 {
     background-color: rgb(216, 148, 148);
     transition: all 0.2s;
     padding-top: 0.4%;
-
 }
 
 #button1:hover,
