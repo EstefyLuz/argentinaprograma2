@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra Papel o Tijeras</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="pagina">
 
@@ -18,22 +20,28 @@
 
         <div class="nombreMostrado">
             <p id="nombreMostrado"></p>
+            <p id="ganadorFinal"></p>
         </div>
 
         <div class="conteiner2" id="seleccionarJugada">
             <h2>Selecciona la opcion a jugar</h2>
-                <div class="button">
-                <button id="button1" data-eleccion="Piedra"><img src="imag/piedra.jpg" width="111"></button>
-                <button id="button2" data-eleccion="Papel"><img src="imag/papel.jpg" width="107"></button>
-                <button id="button3" data-eleccion="Tijeras"><img src="imag/tijeras.jpg" width="109"></button>
-                </div>
-                <h2>Elecciones:</h2>
+            <div class="button">
+                <button id="button1" data-eleccion="Piedra"><img src="imag/iconopiedra.png"
+                        width="111"></button>
+                <button id="button2" data-eleccion="Papel"><img src="imag/iconopapel.png"
+                        width="107"></button>
+                <button id="button3" data-eleccion="Tijeras"><img src="imag/iconotijera.png"
+                        width="109"></button>
+            </div>
+
+            <h2>Elecciones:</h2>
+
             <div class="anotaciones">
-                <div class="eleccionUs">        
-                <p id="usElije">Usuario: </p> <!-- Párrafo para mostrar eleccion us-->
+                <div class="eleccionUs">
+                    <p id="usElije">Usuario: </p> 
                 </div>
-                <div class="pcElije"> 
-                <p id="pcElije">PC:</p> <!-- Párrafo para mostrar eleccion pc-->
+                <div class="pcElije">
+                    <p id="pcElije">PC:</p> 
                 </div>
             </div>
         </div>
@@ -42,21 +50,23 @@
             <h2>Resultados</h2>
             <h3>Ganador de la Ronda</h3>
             <div class="anotaciones">
-            <p id="ganaRonda"> - </p> <!-- Párrafo para mostrar ganador de la ronda-->
+                <p id="ganaRonda"> - </p> 
             </div>
             <h2 id="Marcador">Marcador</h2>
             <div class="anotaciones">
-            <p id="MarcadorUs">Usuario: 0</p>
-            <p id="MarcadorPc">PC: 0</p>
+                <p id="MarcadorUs">Usuario: 0</p>
+                <p id="MarcadorPc">PC: 0</p>
             </div>
-            <p id="ganadorFinal"></p>
-            
         </div>
+
         <div class="reiniciar">
-            <button id="Reiniciar" class="Item item8" type="button" onclick="reiniciarJuego()">Reiniciar</button></div>
+            <button id="Reiniciar" class="Item item8" type="button"
+                onclick=document.location.reload()>Reiniciar</button>
         </div>
     </div>
 
+
     <script src="./main.js"></script>
 </body>
+
 </html>
